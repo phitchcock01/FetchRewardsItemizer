@@ -10,16 +10,17 @@ import kotlinx.android.synthetic.main.item_row.view.*
  * The ItemAdapter class adapts a list of items to the recycler view.
  */
 class ItemAdapter(
-    private val items: MutableList<Item>
+    private var items: MutableList<Item>
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     //
     // Methods
     //
-    fun addItem(item : Item) {
-        items.add(item)
-        notifyItemInserted(items.size - 1)
+
+    fun setItems(items1 : MutableList<Item>) {
+        items = items1
+        this.notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {

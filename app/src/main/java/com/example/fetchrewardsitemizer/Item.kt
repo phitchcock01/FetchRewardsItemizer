@@ -10,5 +10,5 @@ package com.example.fetchrewardsitemizer
 data class Item (
     val id: Long,
     val listId: Long,
-    val name: String
+    val name: String?
 )
